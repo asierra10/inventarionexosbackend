@@ -1,3 +1,5 @@
+-- Crear base de datos
+
 CREATE DATABASE inventario
     WITH
     OWNER = postgres
@@ -6,6 +8,8 @@ CREATE DATABASE inventario
     LC_CTYPE = 'en_US.utf8'
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
+
+-- Crear Schema
 
 CREATE SCHEMA public
        AUTHORIZATION postgres;
@@ -16,6 +20,8 @@ COMMENT ON SCHEMA public
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 GRANT ALL ON SCHEMA public TO postgres;
+
+-- Crear tabla Producto
 
 CREATE TABLE public.producto
 (
@@ -42,6 +48,8 @@ TABLESPACE pg_default;
 ALTER TABLE public.producto
     OWNER to root;
 
+-- Crear Tabla usuario
+
 CREATE TABLE public.usuario
 (
     id_usuario integer NOT NULL DEFAULT nextval('usuario_id_usuario_seq'::regclass),
@@ -61,6 +69,8 @@ TABLESPACE pg_default;
 ALTER TABLE public.usuario
     OWNER to root;
 
+-- Crear tabla Cargos
+
 CREATE TABLE public.cargos
 (
     cargo character varying COLLATE pg_catalog."default" NOT NULL,
@@ -72,4 +82,19 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.cargos
     OWNER to root;
+
+-- Insertar datos en tabla cargos
+INSERT INTO public.cargos(cargo, id_cargo) VALUES ('Asesor de ventas', 1);
+INSERT INTO public.cargos(cargo, id_cargo) VALUES ('Administrador', 2);
+INSERT INTO public.cargos(cargo, id_cargo) VALUES ('Soporte', 3);
+
+-- Insertar datos en tabla usuario
+INSERT INTO public.usuario(id_usuario, nombre_usuario, edad, fecha_ingreso, cargo) VALUES (1, 'Carlos Perez', 25, Now(), 1);
+INSERT INTO public.usuario(id_usuario, nombre_usuario, edad, fecha_ingreso, cargo) VALUES (2, 'Lina Daza', 19, Now(), 2);
+INSERT INTO public.usuario(id_usuario, nombre_usuario, edad, fecha_ingreso, cargo) VALUES (3, 'Diana Cruz', 21, Now(), 3);
+
+-- Insertar datos en tabla producto
+INSERT INTO public.producto(nombre, cantidad, usuario_creador, fecha_creacion, usuario_editor, fecha_edicion, id_producto) VALUES ('Motor', 10, 1, Now(), 2, Now(), 1);
+INSERT INTO public.producto(nombre, cantidad, usuario_creador, fecha_creacion, usuario_editor, fecha_edicion, id_producto) VALUES ('Carburador', 15, 2, Now(), 3, Now(), 2);
+INSERT INTO public.producto(nombre, cantidad, usuario_creador, fecha_creacion, usuario_editor, fecha_edicion, id_producto) VALUES ('Bateria', 20, 3, Now(), 1, Now(), 3);
 
