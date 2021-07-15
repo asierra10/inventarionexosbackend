@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "9f22919f-feaa-4853-8992-8060977c110d",
+		"name": "InventarioNexos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API's Productos",
+			"item": [
+				{
+					"name": "Obtener todos los productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/AllProducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"AllProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un producto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/getOneProduct?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getOneProduct"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los productos que contengan palabra clave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/getAllProductsByName?name=Motor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getAllProductsByName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Motor"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un producto por nombre exacto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/getProductByName?name=Espejos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getProductByName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Espejos"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar producto nuevo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Ruedas\",\r\n    \"cantidad\": 24\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/saveProduct?creador=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"saveProduct"
+							],
+							"query": [
+								{
+									"key": "creador",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar producto existente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Llantas\",\r\n    \"cantidad\": 1099\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/updateProduct?id=17&editor=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"updateProduct"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "17"
+								},
+								{
+									"key": "editor",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto existente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/deleteProduct?id=17&creator=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteProduct"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "17"
+								},
+								{
+									"key": "creator",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API's Usuarios",
+			"item": [
+				{
+					"name": "Obtener todos los usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/AllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"AllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar nuevo usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_usuario\": \"Miguel Valencia\",\r\n    \"edad\":31\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/saveUser?cargo=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"saveUser"
+							],
+							"query": [
+								{
+									"key": "cargo",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario existente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/deleteUser?id=18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteUser"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "18"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API's Cargos",
+			"item": [
+				{
+					"name": "Obtener todos los cargos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/AllPositions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"AllPositions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar cargo nuevo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cargo\":\"Nuevo Cargo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/savePosition",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"savePosition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cargo existente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/deletePosition?id=19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deletePosition"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "19"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
