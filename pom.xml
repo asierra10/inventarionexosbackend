@@ -59,7 +59,7 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>RELEASE</version>
+			<version>7.4.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -69,15 +69,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>11</source>
-					<target>11</target>
-					<testSource>11</testSource>
-					<testTarget>11</testTarget>
-					<showDeprecation>true</showDeprecation>
-					<compilerArgument>-Xlint:unchecked</compilerArgument>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
