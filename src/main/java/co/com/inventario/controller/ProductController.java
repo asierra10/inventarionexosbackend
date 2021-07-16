@@ -51,7 +51,7 @@ public class ProductController {
     @GetMapping("getAllProductsByName")
     public ResponseEntity<List<Producto>> getAllProductsByName(@RequestParam String name){
         try{
-            List<Producto> fromRepo = repo.findByNombreContaining(name);
+            List<Producto> fromRepo = repo.findByNombreContainingIgnoreCase(name);
             return new ResponseEntity<>(fromRepo, HttpStatus.OK);
         }catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

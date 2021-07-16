@@ -10,5 +10,5 @@ public interface IRepositorioProducto extends JpaRepository<Producto, Long> {
 
     Producto findByNombre(String nombre);
 
-    List<Producto>findByNombreContaining(String nombre);
+    List<Producto>findByNombreContainingIgnoreCase(String nombre);
 }
